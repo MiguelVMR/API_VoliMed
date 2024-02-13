@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: Voll.med
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driverClassName: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+server:
+  error:
+    include-stacktrace: never
+api:
+  security:
+    token:
+      secret: ${JWT_SECRET:12345678}
